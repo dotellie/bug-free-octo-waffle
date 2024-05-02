@@ -10,5 +10,8 @@
     "test": "jest tests"
   },
   "author": "",
-  "license": "MPL-2.0"
+  "license": "MPL-2.0",
+  "dependencies": {
+    "underscore": "^1.13.6"
+  }
 }
