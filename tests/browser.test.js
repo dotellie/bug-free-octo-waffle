@@ -14,6 +14,10 @@ beforeAll(async () => {
   await driver.get(fileUnderTest);
 });
 
+beforeEach(async () => {
+  await driver.executeScript("window.clearStack()");
+});
+
 // Allra sist avslutar vi Firefox igen
 afterAll(async () => {
   await driver.quit();
@@ -31,5 +35,26 @@ describe('Clicking "Pusha till stacken"', () => {
     let alert = await driver.switchTo().alert();
     await alert.sendKeys("Bananer");
     await alert.accept();
+  });
+});
+
+describe('Clicking "Poppa stacken!"', () => {
+  it("should remove the top element from the stack", async () => {
+    let push = await driver.findElement(By.id("push"));
+    await push.click();
+    let alert = await driver.switchTo().alert();
+    await alert.sendKeys("Bananer");
+    await alert.accept();
+
+    let pop = await driver.findElement(By.id("pop"));
+    await pop.click();
+    let popAlert = await driver.switchTo().alert();
+    await popAlert.accept();
+
+    let peek = await driver.findElement(By.id("peek"));
+    await peek.click();
+
+    let stack = await driver.findElement(By.id("top_of_stack")).getText();
+    expect(stack).toEqual("undefined");
   });
 });

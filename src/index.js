@@ -23,3 +23,5 @@ window.onload = function () {
     display.innerHTML = stack.peek();
   });
 };
+
+window.clearStack = stack.clear;
