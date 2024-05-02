@@ -2,6 +2,11 @@ const _ = require("underscore");
 
 let stack = [];
 
+// Tömmer stacken
+exports.clear = function () {
+  stack = [];
+};
+
 // Lägger ett element överst i stacken
 exports.push = function (x) {
   stack.push(x);
