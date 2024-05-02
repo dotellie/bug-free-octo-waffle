@@ -1,0 +1,14 @@
+{
+  "name": "testing-with-jest",
+  "version": "0.0.0",
+  "description": "Hey, you found a project that I was required to publish here but that I'm definitely not proud of. We're apparently using Jest... idk have used it before, 3/10.",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest tests"
+  },
+  "author": "",
+  "license": "MPL-2.0"
+}
